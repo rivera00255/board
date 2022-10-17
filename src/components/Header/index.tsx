@@ -16,10 +16,10 @@ const Header = () => {
         </div>
         <ul>
           <li>
-            <Link to="/">상품</Link>
+            <Link to="/">주문하기</Link>
           </li>
           <li>
-            <Link to="/">주문확인</Link>
+            <Link to="/order">주문확인</Link>
           </li>
           <li>
             <Link to="/post">후기</Link>
@@ -28,8 +28,9 @@ const Header = () => {
       </nav>
       <nav className="local-nav">
         <ul>
-          <li>장바구니</li>
-          <li>전체주문목록</li>
+          <li>
+            <Link to="/">전체주문목록</Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Main from './pages/Main';
 import './index.css';
 import PostList from './pages/PostList';
+import OrderInfo from './pages/OrderInfo/Index';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/order" element={<OrderInfo />} />
         <Route path="/post" element={<PostList />} />
       </Routes>
     </BrowserRouter>
