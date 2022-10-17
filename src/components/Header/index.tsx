@@ -29,7 +29,7 @@ const Header = () => {
       <nav className="local-nav">
         <ul>
           <li>
-            <Link to="/">전체주문목록</Link>
+            <Link to="/admin">전체주문목록</Link>
           </li>
         </ul>
       </nav>

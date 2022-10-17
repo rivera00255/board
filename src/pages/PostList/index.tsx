@@ -19,7 +19,7 @@ const PostList = () => {
   return (
     <section css={StyledPostList}>
       <div className="container">
-        <div className="title">Review</div>
+        <div className="title">구매 후기</div>
         <div className="list">
           {posts?.map((item: PostType, i: number) => (
             <Post key={i} item={item} />
