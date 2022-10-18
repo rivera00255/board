@@ -6,18 +6,23 @@ import './index.css';
 import PostList from './pages/PostList';
 import OrderInfo from './pages/OrderInfo/Index';
 import OrderList from './pages/OrderList';
+import Login from './pages/Login';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/order" element={<OrderInfo />} />
-        <Route path="/post" element={<PostList />} />
-        <Route path="/admin" element={<OrderList />} />
-      </Routes>
-    </BrowserRouter>
+    <GoogleOAuthProvider clientId={`${process.env.REACT_APP_CLIENT_ID}`}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/order" element={<OrderInfo />} />
+          <Route path="/post" element={<PostList />} />
+          <Route path="/admin" element={<OrderList />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </GoogleOAuthProvider>
   );
 }
 

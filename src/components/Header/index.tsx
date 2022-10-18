@@ -1,8 +1,15 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { RootState } from 'src/store';
 import StyledHeader from './StyledHeader';
+import { googleLogout } from '@react-oauth/google';
+import { logout } from 'src/store/slices/userSlice';
 
 const Header = () => {
+  const user = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
+
   return (
     <header css={StyledHeader}>
       <nav>
@@ -28,6 +35,22 @@ const Header = () => {
       </nav>
       <nav className="local-nav">
         <ul>
+          {user.auth === '' ? (
+            <li>
+              <Link to="/login">로그인</Link>
+            </li>
+          ) : (
+            <li>
+              <button
+                onClick={() => {
+                  dispatch(logout());
+                  googleLogout();
+                }}
+              >
+                로그아웃
+              </button>
+            </li>
+          )}
           <li>
             <Link to="/admin">전체주문목록</Link>
           </li>
