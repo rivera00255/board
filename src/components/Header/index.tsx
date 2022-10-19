@@ -29,7 +29,7 @@ const Header = () => {
             <Link to="/order">주문확인</Link>
           </li>
           <li>
-            <Link to="/post">후기</Link>
+            <Link to="/review">후기</Link>
           </li>
         </ul>
       </nav>

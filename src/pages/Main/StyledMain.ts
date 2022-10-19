@@ -101,6 +101,9 @@ const StyledMain = css`
           top: 4px;
           right: 32px;
           font-size: 0.8rem;
+          &:hover {
+            background: #dfdfdf;
+          }
         }
       }
       .postalcode-wrapper {
