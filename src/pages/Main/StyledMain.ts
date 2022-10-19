@@ -118,6 +118,9 @@ const StyledMain = css`
         padding: 0.4rem 1rem;
         border-radius: 5px;
         margin-top: 20px;
+        &:hover {
+          background: #555;
+        }
       }
     }
   }

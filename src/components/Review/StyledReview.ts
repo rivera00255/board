@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-const StyledPost = css`
+const StyledReview = css`
   width: 520px;
   min-height: 120px;
   border-radius: 5px;
@@ -12,4 +12,4 @@ const StyledPost = css`
   }
 `;
 
-export default StyledPost;
+export default StyledReview;

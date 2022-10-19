@@ -14,7 +14,7 @@ const Login = () => {
         <div className="button-wrapper">
           <GoogleLogin
             onSuccess={(credentialResponse) => {
-              console.log(credentialResponse);
+              // console.log(credentialResponse);
               dispatch(login({ auth: credentialResponse.credential }));
             }}
             onError={() => {

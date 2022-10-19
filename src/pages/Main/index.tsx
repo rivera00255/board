@@ -1,7 +1,19 @@
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 import React, { useState } from 'react';
 import Postcode from 'react-daum-postcode';
 import { useForm } from 'react-hook-form';
+import { postOrder } from 'src/hooks/queries/order';
 import StyledMain from './StyledMain';
+
+export interface OrderType {
+  name: string;
+  phone: string;
+  address: string;
+  product: ProductType[];
+  status?: string;
+  price?: string;
+}
 
 interface ProductType {
   type: string;
@@ -14,7 +26,6 @@ const Main = () => {
   const skirtSizes = ['S', 'M', 'L', 'XL'];
 
   const [option, setOption] = useState(new Map());
-  const [product, setProduct] = useState<ProductType[]>([]);
   const [visible, setVisible] = useState(false);
 
   const {
@@ -23,6 +34,15 @@ const Main = () => {
     setValue,
     formState: { errors },
   } = useForm({ mode: 'onChange' });
+
+  const { mutate: orderMutate } = useMutation(postOrder, {
+    onSuccess: () => {
+      alert('주문이 완료되었습니다.');
+    },
+    onError: (err) => {
+      console.log(err);
+    },
+  });
 
   // 총 주문금액 계산
   const handleTotalPrice = () => {
@@ -37,9 +57,18 @@ const Main = () => {
     return Number(blazerQuan * 139000 + skirtQuan * 59000);
   };
 
+  // 주문상품배열
+  const handleProduct = () => {
+    let product: ProductType[] = [];
+    Array.from(option.values()).reduce((acc, cur) => {
+      product.push(cur);
+    }, []);
+    return product;
+  };
+
   // 주소 검색
   const handlePostcode = (data: any) => {
-    let fullAddress = data.address;
+    let fullAddress = `(${data.zonecode}) ${data.address}`;
     // let extraAddress = '';
 
     // if (data.addressType === 'R') {
@@ -58,16 +87,19 @@ const Main = () => {
   };
 
   // 주문하기
-  const onSubmit = (data: any) => {
-    Array.from(option.values()).reduce((acc, cur) => {
-      setProduct((prev) => [...prev, cur]);
-    }, []);
-
+  const onSubmit = async (data: any) => {
+    const product = handleProduct();
     data = getValues();
 
     if (product.length > 0 && Object.keys(errors).length < 1) {
-      console.log(product);
-      console.log(data);
+      // console.log(product);
+      // console.log(data);
+      orderMutate({
+        name: data.name,
+        phone: data.phone,
+        address: data.address1 + ' ' + data.address2,
+        product: product,
+      });
     } else {
       alert('주문 수량 및 정보를 입력해주세요.');
     }

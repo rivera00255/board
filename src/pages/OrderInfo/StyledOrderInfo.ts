@@ -34,6 +34,9 @@ const StyledOrderInfo = css`
         padding: 4px 16px;
         border-radius: 5px;
         margin-top: 16px;
+        &:hover {
+          background: #555;
+        }
       }
     }
     .result {

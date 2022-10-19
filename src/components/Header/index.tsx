@@ -37,7 +37,9 @@ const Header = () => {
         <ul>
           {user.auth === '' ? (
             <li>
-              <Link to="/login">로그인</Link>
+              <Link to="/admin" style={{ color: '#888' }}>
+                전체주문목록
+              </Link>
             </li>
           ) : (
             <li>
@@ -51,9 +53,6 @@ const Header = () => {
               </button>
             </li>
           )}
-          <li>
-            <Link to="/admin">전체주문목록</Link>
-          </li>
         </ul>
       </nav>
     </header>

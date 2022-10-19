@@ -1,10 +1,10 @@
 import React from 'react';
-import { PostType } from 'src/pages/PostList';
-import StyledPost from './StyledPost';
+import { ReviewType } from 'src/pages/ReviewList';
+import StyledReview from './StyledReview';
 
-const Post = (props: { item: PostType }) => {
+const Review = (props: { item: ReviewType }) => {
   return (
-    <div css={StyledPost}>
+    <div css={StyledReview}>
       {/* <div className="info">{props.item.userId}</div> */}
       <div className="title">{props.item.title}</div>
       <div className="content">{props.item.body}</div>
@@ -12,4 +12,4 @@ const Post = (props: { item: PostType }) => {
   );
 };
 
-export default Post;
+export default Review;

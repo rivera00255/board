@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-const StyledPostList = css`
+const StyledReviewList = css`
   .container {
     width: 1200px;
     margin: 0 auto;
@@ -18,4 +18,4 @@ const StyledPostList = css`
   }
 `;
 
-export default StyledPostList;
+export default StyledReviewList;
