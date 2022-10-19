@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Main from './pages/Main';
 import './index.css';
-import PostList from './pages/ReviewList';
+import ReviewList from './pages/ReviewList';
 import OrderInfo from './pages/OrderInfo/Index';
 import OrderList from './pages/OrderList';
 import Login from './pages/Login';
@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/order" element={<OrderInfo />} />
-          <Route path="/post" element={<PostList />} />
+          <Route path="/review" element={<ReviewList />} />
           <Route path="/admin" element={<OrderList />} />
           <Route path="/login" element={<Login />} />
         </Routes>
