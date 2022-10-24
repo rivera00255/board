@@ -20,6 +20,6 @@ react, typescript, redux toolkit, emotion
 - 로그인 후 전체주문목록 확인 및 후기 작성 가능
 - redux toolkit을 이용한 상태 관리, redux persist를 이용해 로그인한 유저의 정보를 localStorage에 저장
 
-![screen02](https://user-images.githubusercontent.com/93629526/197454078-794aec2a-8ef7-4ea2-abff-2e9c2eb29c7b.jpg)
+![screen03](https://user-images.githubusercontent.com/93629526/197454353-c52432b1-ccb0-46ac-a9ab-4dfa297d8ba5.jpg)
 
 ##### emotion을 이용한 스타일링
