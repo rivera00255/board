@@ -100,6 +100,7 @@ const Main = () => {
         address: data.address1 + ' ' + data.address2,
         product: product,
       });
+      setOption(new Map());
     } else {
       alert('주문 수량 및 정보를 입력해주세요.');
     }

@@ -8,9 +8,9 @@ import { RootState } from 'src/store';
 import ReviewBoardModal from 'src/components/ReviewBoardModal';
 
 export interface ReviewType {
-  id: number;
-  userId: number;
-  title: string;
+  id?: number;
+  userId?: number;
+  title?: string;
   body: string;
 }
 

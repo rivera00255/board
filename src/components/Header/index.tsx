@@ -37,7 +37,7 @@ const Header = () => {
         <ul>
           {user.auth === '' ? (
             <li>
-              <Link to="/admin" style={{ color: '#888' }}>
+              <Link to="/orderlist" style={{ color: '#888' }}>
                 전체주문목록
               </Link>
             </li>

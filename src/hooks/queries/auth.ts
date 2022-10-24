@@ -1,26 +1,20 @@
-import axios, { AxiosInstance } from 'axios';
+import axios from 'axios';
+import { RootState } from 'src/store';
 
-axios.defaults.withCredentials = true;
+const instance = axios.create({
+  baseURL: 'http://localhost:8080',
+});
 
-const setInterceptors = (instance: AxiosInstance) => {
-  instance.interceptors.request.use(
-    (config: any) => {
-      const token = window.localStorage.getItem('auth');
-      config.headers['Authorization'] = `Bearer ${token}`;
-      console.log(config);
-      return config;
-    },
-    (error) => {
-      console.log(error);
-      return Promise.reject(error);
-    },
-  );
-  return instance;
-};
+instance.interceptors.request.use(
+  (config: any) => {
+    const token = (state: RootState) => state.user.auth;
+    config.headers['Authorization'] = `Bearer ${token}`;
+    return config;
+  },
+  (error) => {
+    console.log(error);
+    return Promise.reject(error);
+  },
+);
 
-export const createInstance = () => {
-  const instance = axios.create({
-    baseURL: 'http://localhost:8080',
-  });
-  return setInterceptors(instance);
-};
+export default instance;

@@ -1,5 +1,4 @@
 import React from 'react';
-// import GoogleLogin from 'react-google-login';
 import { GoogleLogin } from '@react-oauth/google';
 import StyledLogin from './StyledLogin';
 import { useDispatch } from 'react-redux';
@@ -22,13 +21,6 @@ const Login = () => {
             }}
           />
         </div>
-        {/* <GoogleLogin
-          clientId={`${process.env.REACT_APP_CLIENT_ID}`}
-          buttonText="구글로 계속하기"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy={'single_host_origin'}
-        /> */}
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/order" element={<OrderInfo />} />
           <Route path="/review" element={<ReviewList />} />
-          <Route path="/admin" element={<OrderList />} />
+          <Route path="/orderlist" element={<OrderList />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>

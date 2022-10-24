@@ -27,13 +27,13 @@ const OrderList = () => {
           <div className="controller"></div>
           <div className="list">
             <div className="list-nav">
-              <ul>
+              {/* <ul>
                 <li>전체</li>
                 <li>결제완료</li>
                 <li>배송중</li>
                 <li>배송완료</li>
                 <li>취소</li>
-              </ul>
+              </ul> */}
             </div>
             <div className="list-table">
               <div className="row">
@@ -67,7 +67,7 @@ const OrderList = () => {
                       </p>
                     ))}
                   </div>
-                  <div className="column">주문현황</div>
+                  <div className="column">배송완료</div>
                 </div>
               ))}
             </div>
