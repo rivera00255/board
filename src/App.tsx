@@ -12,7 +12,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 function App() {
   return (
     <GoogleOAuthProvider clientId={`${process.env.REACT_APP_CLIENT_ID}`}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
