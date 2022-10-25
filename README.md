@@ -1,6 +1,8 @@
 # 공동구매
 
-react, typescript, redux toolkit, emotion
+[→ https://rivera00255.github.io/group-buying](https://rivera00255.github.io/group-buying)   
+
+react, typescript, redux toolkit, emotion   
 
 ##### 주문수량, 주문인 정보 입력 후 주문하기 버튼 클릭시 주문
 
